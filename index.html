@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🗂 ID Checker</h1>
+    <p>ID'larni saqlash va ommaviy tekshirish</p>
+</header>
+
+<div class="stats">
+    <div class="stat">
+        <span>Jami ID</span>
+        <h2 id="total">0</h2>
+    </div>
+    <div class="stat">
+        <span>Yutuqli ID</span>
+        <h2 id="winners">0</h2>
+    </div>
+    <div class="stat">
+        <span>Jami yutuq</span>
+        <h2 id="prizeTotal">0</h2>
+    </div>
+</div>
+
+<main>
+    <section class="card">
+        <h2>➕ Yangi ID qo‘shish</h2>
+
+        <form id="idForm">
+            <label>Ilova nomi</label>
+            <input id="appName" placeholder="Masalan: Telegram" required>
+
+            <label>ID raqami</label>
+            <input id="accountId" placeholder="1817047159"
+                   inputmode="numeric" required>
+
+            <label>Akkaunt username</label>
+            <input id="username" placeholder="@username">
+
+            <label>Yutuq (so‘m)</label>
+            <input id="prize" type="number" min="0"
+                   placeholder="Yutuq bo‘lmasa bo‘sh qoldiring">
+
+            <label>Izoh</label>
+            <input id="note" placeholder="Ixtiyoriy">
+
+            <button type="submit">Saqlash</button>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>🔎 ID qidirish</h2>
+        <input id="search" placeholder="ID, username yoki ilova nomi...">
+        <div id="records"></div>
+    </section>
+
+    <section class="card">
+        <h2>⚡ Ommaviy ID tekshirish</h2>
+        <p>Har bir ID'ni yangi qatordan yozing.</p>
+
+        <textarea id="bulkIds" rows="7"
+                  placeholder="1817047159&#10;1817078623&#10;1817063799"></textarea>
+
+        <button id="checkBtn">ID'larni tekshirish</button>
+        <button id="clearCheck" class="secondary">Natijani tozalash</button>
+
+        <div id="checkResults"></div>
+    </section>
+
+    <section class="card">
+        <h2>💾 Ma'lumotlar</h2>
+        <button id="exportBtn">JSON yuklab olish</button>
+
+        <label class="import-label" for="importFile">
+            JSON faylni tiklash
+        </label>
+        <input id="importFile" type="file" accept=".json">
+
+        <button id="deleteAll" class="danger">Barcha ID'larni o‘chirish</button>
+        <p class="hint">
+            Ma'lumotlar faqat shu brauzerda saqlanadi.
+            Brauzer ma'lumotlarini tozalasangiz, ular yo‘qolishi mumkin.
+            Muntazam zaxira nusxa oling.
+        </p>
+    </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
